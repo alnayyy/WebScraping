@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membaca File Teks</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+</head>
+<body>
+    <h1> Headline Republika Online</h1>
+    <div id="berita_json"></div>
+    
+
+
+
+
+    
+    <script type="text/javascript">
+        $(function(){
+    
+            $.get('berita.json', function(obj) {
+                
+                console.log(data);
+                var str = "<table border=1>"
+                
+                str+="<tr><td>No</td><td>Judul Headline</td></tr>";
+    
+                $.each(obj, function(n, data) {
+                    str+="<tr><td>"+(n+1)+"</td>";
+                    str+="<td>"+data.judul+"</td></tr>";
+                });
+    
+                str+="</table>";
+    
+                $('#berita_json').html(str)
+            })
+        })
+    
+    </script>
+</body>
+</html>
