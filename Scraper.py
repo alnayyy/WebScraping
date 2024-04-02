@@ -10,7 +10,7 @@ page = requests.get("https://www.republika.co.id/")
 #  Extract konten menjadi objek BeautifulSoup
 obj = BeautifulSoup(page.text,'html.parser')
 
-scraping_time = datetime.datetime.now()
+scraping_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 news = obj.find_all('li', class_='list-group-item list-border conten1')
 data_berita = []
 
