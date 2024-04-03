@@ -1,4 +1,4 @@
-# Import package requests dan BeautifulSoup
+# Import package requests, datetime, json, dan BeautifulSoup
 import requests 
 import datetime
 import json
@@ -14,20 +14,7 @@ scraping_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 news = obj.find_all('li', class_='list-group-item list-border conten1')
 data_berita = []
 
-
-# print('Menampilkan objek html ')
-# print('=======================')
-# print(obj)
-
-# print('\nMenampilkan title browser dengan tag')
-# print('======================================')
-# print(obj.title)
-
-# print('\nMenampilkan title browser tanpa tag')
-# print('=====================================')
-# print(obj.title.text)
-
-print("Scraping dilakukan pada:", scraping_time)
+print("\nScraping dilakukan pada:", scraping_time)
 
 print('\nMenampilkan semua berita')
 print('=====================================')
@@ -54,5 +41,5 @@ for berita in news:
     # Menambahkan dictionary berita ke list data_berita
     data_berita.append(berita_dict)
     
-with open('berita.json', 'w') as f:
-    json.dump(data_berita, f, indent=4)
+    with open('berita.json', 'w') as f:
+        json.dump(data_berita, f, indent=4)
