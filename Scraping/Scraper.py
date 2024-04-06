@@ -31,6 +31,7 @@ for berita in news:
     print("Judul Berita:", judul, "\n")
     count+=1
     
+    # Membuat Dictionary untuk menyimpan data
     berita_dict = {
         'judul': judul,
         'kategori': kategori,
